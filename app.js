@@ -17,7 +17,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Connecting to MongoDB Atlas database using mongoose
 let link = "mongodb+srv://" + process.env.MONGODB_USERNAME + ":" + process.env.MONGODB_PASSWORD + "@" + process.env.MONGODB_CLUSTER + "/inventory"
-//let link = "mongodb+srv://admin-ves:VVSadmin!123@cluster0.v9zcs.mongodb.net/inventory";
 mongoose.connect(link, {'useNewUrlParser': true, 'useUnifiedTopology': true});
 mongoose.set("useCreateIndex", true);
 

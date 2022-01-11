@@ -4,8 +4,6 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const ejs = require("ejs");
 const path = require('path');
-const Json2csvParser = require("json2csv").Parser
-const fs = require('fs');
 require('dotenv').config()
 
 

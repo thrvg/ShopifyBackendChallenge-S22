@@ -1,4 +1,4 @@
-Shopify Backend Developer Challenge
+# Shopify Backend Developer Challenge
 
 Submission by Atharva Gangal
 
@@ -10,6 +10,6 @@ When the expand button is pressed, more details are shown, specifically the loca
 
 This application is written using MongoDB Atlas and Express + Node. Light styling was done using Bootstrap. MongoDB (NoSQL) was chosen for its ease of horizontal expansion (for fields like quantity description). Express was chosen for fast development times.
 
-To use the application, please go to this link:
+This application is hosted. To use the application, please go to this link: https://shopify-atharvagangal.herokuapp.com/
 
-To run it locally, clone the application. Run npm install to install all dependencies. You will need to create a .env file with your own credentials for MongoDB Atlas. When finished, run node app.js and open localhost:3000 in your browser.
+To run it locally, clone the application. Run `npm install` to install all dependencies. You will need to create a `.env` file with your own credentials for MongoDB Atlas. When finished, run node app.js and open `localhost:3000` in your browser.

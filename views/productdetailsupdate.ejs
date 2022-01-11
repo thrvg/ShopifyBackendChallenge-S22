@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Shopify Developer Challenge</title>
+    <link rel="stylesheet" href="css/productspage.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div>
+        <h1>Product Details Update</h1>
+        <form action="/update" method="post">
+        <table>
+            <tr>
+              <th>Product ID</th>
+              <th>Product Name</th>
+              <th>Total Quantity</th>
+            </tr>
+            
+                <tr>
+                    <td><input type="text" name="pid" value="<%=product.id%>" readonly></td>
+                    <td><input type="text" name="pname" value="<%-product.name%>"></td>
+                    <td><input type="number" name="ptotalq" value="<%-product.totalq%>"></td>
+
+                </tr>
+            
+
+            
+            
+          </table> 
+          <table id="mytable">
+            <tr>
+              <th>Quantity</th>
+              <th>Status (at/shipping to)</th>
+              <th>Location</th>
+            </tr>
+            <%let count = 0%>
+            <%product.quantities.forEach(function(element){%>
+                
+                <tr>
+                    <td><input name="quantity_<%-count%>" type="number" value="<%-element.quantity%>"></td>
+                    <td>
+                      <select name="status_<%-count%>" id="cars">
+                        <option value="at">at</option>
+                        <option value="shipping to">shipping to</option>
+                      </select>
+                    </td>
+                    <td><input name="location_<%-count%>" type="text" value="<%-element.location%>"></td>
+                </tr> 
+          
+
+            <%count++;%>
+            <%});%>
+
+            
+
+          </table>
+            <div class="text-center">
+            <button class="btn btn-dark mb-3" type="submit" name="item" value="<%-product.id%>">Save</button>
+          </div>
+          </form>
+          <form  class="text-center" action="/back" method="get">
+            <button class="btn btn-dark mb-3" type="submit" name="back" value="<%-product.id%>">Back</button>
+          </form>
+          <div class="text-center">
+            <button class="btn btn-dark" id="moretextboxes">More Textboxes</button>
+          </div>
+    </div>
+    <script src="JS/createrecord.js" charset="utf-8"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Shopify Developer Challenge</title>
+    <link rel="stylesheet" href="css/productspage.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div>
+        <h1>Products</h1>
+        <table>
+            <tr>
+              <th>Product ID</th>
+              <th>Product Name</th>
+              <th>Reason</th>
+              <th>DeletedDate</th>
+              <th></th>
+              <th></th>
+            </tr>
+            <%products.forEach(function(element){%>
+                
+                <tr>
+                  <form action="/restore" method="post">
+                    <td><%=element.id%></td>
+                    <td><%=element.name%></td>
+                    <td><%=element.reason%></td>
+                    <td><%=element.deletedDate%></td>
+                    <td><button class="btn btn-dark" type="submit" name="item" value="<%-element.id%>">Restore</button></td>
+                  </form>
+                  <form action="/deletepermanently" method="post">
+                    <td><button class="btn btn-dark" type="submit" name="item" value="<%-element.id%>">Delete Permanently</button></td>
+                  </form>
+                </tr>
+            
+
+            
+            <%});%>
+            
+          </table> 
+    </div>
+    <form class="text-center" action="/backtohome" method="get">
+       <button class="btn btn-dark mb-3" type="submit" >Back To Home</button>
+        </tr>
+    </form>
+    
+  </body>
+</html>

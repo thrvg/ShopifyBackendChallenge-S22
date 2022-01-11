@@ -1,0 +1,13 @@
+table {
+    border: 1px solid black;
+    width: 80%;
+    margin: 5% 10%;
+  }
+
+th, td{
+    border: 1px solid black;
+    margin: 20px;
+}
+h1{
+    text-align: center;
+}

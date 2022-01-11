@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Shopify Developer Challenge</title>
+    <link rel="stylesheet" href="css/productspage.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div>
+        <h1>Product Details</h1>
+        <table>
+            <tr>
+              <th>Product ID</th>
+              <th>Product Name</th>
+              <th>Total Quantity</th>
+            </tr>
+                
+                <tr>
+                    <td><%=product.id%></td>
+                    <td><%=product.name%></td>
+                    <td><%=product.totalq%></td>
+
+                </tr>
+            
+
+            
+            
+          </table> 
+          <table>
+            <tr>
+              <th>Quantity</th>
+              <th>Status</th>
+              <th>Location</th>
+            </tr>
+            <%product.quantities.forEach(function(element){%>
+                
+                <tr>
+                    <td><%=element.quantity%></td>
+                    <td><%=element.status%></td>
+                    <td><%=element.location%></td>
+                </tr>
+          
+
+            
+            <%});%>
+            
+          </table>
+          <form class="text-center mb-3" action="/delete" method="get">
+            <button class="btn btn-dark" type="submit" name="item" value="<%-product.id%>">Delete</button>
+          </form>
+          <form  class="text-center mb-3" action="/update" method="get">
+            <button class="btn btn-dark" type="submit" name="item" value="<%-product.id%>">Update</button>
+          </form>
+          <form  class="text-center" action="/backtohome" method="get">
+            <button class="btn btn-dark" type="submit">Back to Home</button>
+          </form>
+    </div>
+      
+  </body>
+</html>

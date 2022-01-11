@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Shopify Developer Challenge</title>
+    <link rel="stylesheet" href="css/productspage.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div>
+        <h1>Create Product Record</h1>
+        <form action="/create" method="post">
+        <table>
+            <tr>
+              <th>Product ID</th>
+              <th>Product Name</th>
+              <th>Total Quantity</th>
+            </tr>
+            
+                <tr>
+                    <td><input type="text" name="pid" ></td>
+                    <td><input type="text" name="pname" ></td>
+                    <td><input type="number" name="ptotalq"></td>
+
+                </tr>
+            
+
+            
+            
+          </table> 
+          <table id="mytable">
+            <tr>
+              <th>Quantity</th>
+              <th>Status (at/shipping to)</th>
+              <th>Location</th>
+            </tr>
+           
+                
+                <tr>
+                    <td><input name="quantity_0" type="number" ></td>
+                    <td>
+                      <select name="status_0" >
+                        <option value="at">at</option>
+                        <option value="shipping to">shipping to</option>
+                      </select>
+                    </td>
+                    <td><input name="location_0" type="text" ></td>
+                </tr> 
+          
+            <div id="mydiv"></div>
+            
+          </table>
+          
+            <div class="text-center">
+            <button class="btn btn-dark mb-3" type="submit" name="item" >Save</button>
+          </div>
+          </form>
+          
+          <form  class="text-center" action="/backtohome" method="get">
+            <button class="btn btn-dark mb-3" type="submit" name="backtohome">Back To Home</button>
+          </form>
+          <div class="text-center">
+          <button class="btn btn-dark" id="moretextboxes">More Textboxes</button>
+        </div>
+
+    </div>
+    <script src="JS/createrecord.js" charset="utf-8"></script>
+  </body>
+</html>
